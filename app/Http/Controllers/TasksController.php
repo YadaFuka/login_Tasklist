@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use Illuminate\Support\Facades\Auth; //追記文
 
 use Illuminate\Http\Request;
 
@@ -79,7 +80,7 @@ class TasksController extends Controller
         // idの値でタスクを検索して取得
         $task = Task::findOrFail($id);
 
-        // 認証済みユーザー（閲覧者）がその投稿の所有者である場合は投稿を削除
+        // 認証済みユーザー（閲覧者）がその投稿の所有者である場合は投稿を編集
         if (Auth::id() === $task->user_id) {
             // タスク編集ビューでそれを表示
             return view('tasks.edit', [
