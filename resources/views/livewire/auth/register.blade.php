@@ -8,7 +8,7 @@ use Illuminate\Validation\Rules;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new #[Layout('components.layouts.auth')] class extends Component {
+new #[Layout('layouts.auth')] class extends Component {
     public string $name = '';
     public string $email = '';
     public string $password = '';
@@ -33,7 +33,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
         $this->redirect(route('dashboard', absolute: false), navigate: true);
     }
-; ?>
+}; ?>
 
 <div class="flex flex-col gap-6">
     <x-auth-header title="Create an account" description="Enter your details below to create your account" />

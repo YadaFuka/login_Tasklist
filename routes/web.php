@@ -5,12 +5,14 @@ use Livewire\Volt\Volt;
 
 use App\Http\Controllers\TasksController;
 
-Route::get('/', [TasksController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
 
 Route::get('/dashboard', [TasksController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('tasks', TasksController::class);
+    Route::resource('tasks', TasksController::class, ['only' => ['store', 'edit', 'destroy']]);
 });
 
 require __DIR__.'/auth.php';

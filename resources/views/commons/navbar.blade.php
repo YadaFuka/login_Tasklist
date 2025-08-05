@@ -27,10 +27,10 @@
                         </details>
                     </li>
                 </ul>
-                <ul tabindex="0" class="menu lg:block lg:menu-horizontal">
+                {{-- <ul tabindex="0" class="menu lg:block lg:menu-horizontal"> --}}
                 {{-- メッセージ作成ページへのリンク --}}
-                <li><a class="link link-hover" href="{{ route('tasks.create') }}">新規タスク登録</a></li>
-                </ul>
+                {{-- <li><a class="link link-hover" href="{{ route('tasks.create') }}">新規タスク登録</a></li>
+                </ul> --}}
             </form>
         </div>
     </nav>
