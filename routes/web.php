@@ -12,7 +12,7 @@ Route::get('/', function () {
 Route::get('/dashboard', [TasksController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('tasks', TasksController::class, ['only' => ['store', 'edit', 'destroy']]);
+    Route::resource('tasks', TasksController::class);
 });
 
 require __DIR__.'/auth.php';

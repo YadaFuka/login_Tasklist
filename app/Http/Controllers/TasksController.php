@@ -52,6 +52,7 @@ class TasksController extends Controller
         $task = new task;
         $task->status = $request->status;
         $task->content = $request->content;
+        $task->user_id = Auth::id();
         $task->save();
 
         // トップページへリダイレクトさせる
@@ -105,6 +106,7 @@ class TasksController extends Controller
         // メッセージを更新
         $task->status = $request->status;
         $task->content = $request->content;
+        $task->user_id = Auth::id();
         $task->save();
 
         // トップページへリダイレクトさせる
